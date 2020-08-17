@@ -16,11 +16,11 @@ public class FirstTest {
 			driver.findElement(By.id("last name")).sendKeys("Kumavat");
 			driver.findElement(By.id("E-mail")).sendKeys("MaheshKumavat@Gmail.com");
 			driver.findElement(By.id("Company Name")).sendKeys("Citi");
-			WebElement genderMale = driver.findElement(By.id("male"));
-			if(genderMale.isSelected())
-				driver.findElement(By.id("female")).click();
+			WebElement genderFemale = driver.findElement(By.id("female"));
+			if(genderFemale.isSelected())
+				driver.findElement(By.id("male")).click();
 			else
-				genderMale.click();
+				genderFemale.click();
 			driver.findElement(By.id("10+")).click();
 			driver.findElement(By.id("planguage")).sendKeys("Java,Python,VB");
 			WebElement java = driver.findElement(By.id("java"));
