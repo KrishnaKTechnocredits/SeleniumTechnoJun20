@@ -3,6 +3,7 @@ package ajit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 public class Assignment1 {
 
@@ -14,6 +15,7 @@ public class Assignment1 {
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		driver.get("D:\\JAVA_LEARNING\\Projects\\TechnoGitProject\\FirstForm.html");
+		driver.manage().window().maximize();
 		System.out.println("AutomationByKrishna website open successfully.");
 		// Verify Page Title
 		String actualTitle = driver.getTitle();
@@ -23,16 +25,18 @@ public class Assignment1 {
 		else
 			System.out.println("Title didn't match, Actual URL : " + actualTitle);
 		// Select Radio button
-		if (driver.findElement(By.id("maleG")).isSelected()) {
-			driver.findElement(By.id("femaleG")).click();
-			System.out.println("Female is Selected");
-		} else {
+		if (driver.findElement(By.id("femaleG")).isSelected()) {
 			driver.findElement(By.id("maleG")).click();
 			System.out.println("Male is Selected");
+		} else {
+			driver.findElement(By.id("femaleG")).click();
+			System.out.println("Female is Selected");
 		}
 		// Operation on other Fields
 		driver.findElement(By.id("first name")).sendKeys("Ajit");
 		driver.findElement(By.id("last name")).sendKeys("Singh");
+		driver.findElement(By.id("E-mail")).sendKeys("hi2ajitkumar@gmail.com");
+		driver.findElement(By.id("Company Name")).sendKeys("Techno");
 		driver.findElement(By.id("knownlanguages")).sendKeys("Python");
 		driver.findElement(By.id("fresher")).click();
 		driver.findElement(By.id("java")).click();
@@ -40,7 +44,10 @@ public class Assignment1 {
 
 		// Reset the From
 		driver.findElement(By.id("resetBtn")).click();
-		if (driver.findElement(By.id("first name")).getAttribute("value").equals(""))
+
+		if (driver.findElement(By.id("first name")).getAttribute("value").equals("")
+				&& driver.findElement(By.id("femaleG")).isSelected()
+				&& driver.findElement(By.id("Java")).isSelected() == false)
 			System.out.println("From Reset Done Successfully");
 		else
 			System.out.println("From Reset  Unsuccessfully");
@@ -49,7 +56,8 @@ public class Assignment1 {
 		driver.findElement(By.id("morePractice")).click();
 		Thread.sleep(5000);
 		System.out.println("Current URL : " + driver.getCurrentUrl());
-		if ((driver.getTitle()).equals("Login Signup Demo"))
+		if (driver.getCurrentUrl().equals("http://automationbykrishna.com/")
+				&& driver.getTitle().equals("Login Signup Demo"))
 			System.out.println("Navigation to new URL is Successful");
 		else
 			System.out.println("Navigation to new URL is Unsuccessful");
