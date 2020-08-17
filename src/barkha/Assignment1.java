@@ -34,17 +34,10 @@ public class Assignment1 {
 			System.out.println("You are on a incorrect page.");
 		
 		//filling all details in the form
-		WebElement firstName=driver.findElement(By.id("first name"));
-		firstName.sendKeys("Barkha");
-		
-		WebElement lastName=driver.findElement(By.id("last name"));
-		lastName.sendKeys("Patle");
-		
-		WebElement email=driver.findElement(By.id("E-mail"));
-		email.sendKeys("barkhapatle01@gmail.com");
-		
-		WebElement company=driver.findElement(By.id("Company Name"));
-		company.sendKeys("Syntel");
+		driver.findElement(By.id("first name")).sendKeys("Barkha");
+		driver.findElement(By.id("last name")).sendKeys("Patle");
+		driver.findElement(By.id("E-mail")).sendKeys("barkhapatle01@gmail.com");
+		driver.findElement(By.id("Company Name")).sendKeys("Syntel");
 		
 		//if female radio button is selected then click on male and vice versa
 		if (driver.findElement(By.id("femaleG")).isSelected()) {
@@ -54,7 +47,6 @@ public class Assignment1 {
 			driver.findElement(By.id("femaleG")).click();;
 			
 		}
-		
 		WebElement exp=driver.findElement(By.id("entry2"));
 		exp.click();
 		
@@ -72,13 +64,13 @@ public class Assignment1 {
 		
 		WebElement terms=driver.findElement(By.id("termsAndConditions"));
 		terms.click();
-		
+	
 		//click on reset button
 		driver.findElement(By.id("resetBtn")).click();
 		
 		//checking reset button is working or not (checked on all fields: texts/radio button/check boxes)
-		if(firstName.isSelected()==false && lastName.isSelected()==false &&  email.isSelected()==false && company.isSelected()==false && driver.findElement(By.id("maleG")).isSelected()==false && exp.isSelected()==false && lang.isSelected()==false && learnLang1.isSelected()==false && learnLang2.isSelected()==false && comName.isSelected()==false && terms.isSelected()==false) {
-			System.out.println("Reset is Done Successfully on all fields.");
+		if(driver.findElement(By.id("first name")).getAttribute("value").equals("") && driver.findElement(By.id("last name")).getAttribute("value").equals("") &&  driver.findElement(By.id("E-mail")).getAttribute("value").equals("") && driver.findElement(By.id("Company Name")).getAttribute("value").equals("") && driver.findElement(By.id("maleG")).isSelected()==false && exp.isSelected()==false && lang.isSelected()==false && learnLang1.isSelected()==false && learnLang2.isSelected()==false && comName.isSelected()==false && terms.isSelected()==false) {
+			System.out.println("Reset is Done Successfully  all fields.");
 		}
 		else {
 			System.out.println("Reset Failed!!");
@@ -93,4 +85,4 @@ public class Assignment1 {
 		
 		driver.close();
 	}
-}	
+}			
