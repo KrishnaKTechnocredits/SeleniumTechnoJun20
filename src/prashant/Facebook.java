@@ -59,5 +59,6 @@ public class Facebook {
 			System.out.println("You are still on same page");
 		}		
 		driver.navigate().refresh();
+		driver.close();
 	}
 }
