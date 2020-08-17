@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FormAssignment1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./resources/windows/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("H:/TechnoCredits/First Form.html");
@@ -35,37 +35,37 @@ public class FormAssignment1 {
 		driver.findElement(By.id("last name")).sendKeys("Soni");
 		driver.findElement(By.id("E-mail")).sendKeys("Palash444@gmail.com");
 		driver.findElement(By.id("Company Name")).sendKeys("Vodafone");
-		
-		//Selecting Gender Value
-		WebElement genderValue = driver.findElement(By.name("gender"));
-		genderValue.click();
-		if (genderValue.isSelected())
+
+		// Selecting Gender Value
+		if(driver.findElement(By.id("femaleG")).isSelected());
+		 	driver.findElement(By.id("maleG")).click();
+		if (driver.findElement(By.id("maleG")).getAttribute("value").equals("male"))
 			System.out.println("Test Pass \n2.Selected Gender is -> "
 					+ driver.findElement(By.name("gender")).getAttribute("value"));
 		else
 			System.out.println("Test Fail");
-		
-		//Selecting Region Value
+
+		// Selecting Region Value
 		Select regionValue = new Select(driver.findElement(By.name("continents")));
 		regionValue.selectByVisibleText("Europe");
 
-		//Selecting Experience Value
+		// Selecting Experience Value
 		WebElement experienceValue = driver.findElement(By.id("entry"));
 		experienceValue.click();
 		if (experienceValue.isSelected())
 			System.out.println("Test Pass \n3.Total Years of Exp. is selected");
 		else
 			System.out.println("Test Fail");
-		
-		//Entering Know Language Value
+
+		// Entering Know Language Value
 		driver.findElement(By.id("knownlanguage")).sendKeys("Java");
 		String langValue = driver.findElement(By.id("knownlanguage")).getAttribute("value");
 		if (!langValue.isEmpty())
 			System.out.println("Test Pass \n4.Known Language is -> " + langValue);
 		else
 			System.out.println("Test Fail Language is not entered");
-		
-		//Selection Learning Language
+
+		// Selection Learning Language
 		WebElement learningLangValue = driver.findElement(By.id("java"));
 		learningLangValue.click();
 		if (learningLangValue.isSelected() && learningLangValue.getAttribute("value").equals("python")) {
@@ -73,8 +73,8 @@ public class FormAssignment1 {
 		} else
 			System.out.println(
 					"5.Test Fail \nyou have selected wrong language -> " + learningLangValue.getAttribute("value"));
-		
-		//Selecting Dream company value
+
+		// Selecting Dream company value
 		WebElement dreamCompanyValue = driver.findElement(By.id("google"));
 		dreamCompanyValue.click();
 		if (dreamCompanyValue.isSelected() && dreamCompanyValue.getAttribute("value").equals("Google"))
@@ -82,30 +82,31 @@ public class FormAssignment1 {
 		else
 			System.out.println(
 					"6.Test Fail you have selected wrong company ->" + dreamCompanyValue.getAttribute("value"));
-		
-		//Clicking on Confirm details Check box
+
+		// Clicking on Confirm details Check box
 		WebElement confirmDetailValue = driver.findElement(By.id("confirmDetails"));
 		confirmDetailValue.click();
 		if (confirmDetailValue.isSelected()) {
 			System.out.println("Test Pass\n7.Confirm Details is selected");
 		} else
 			System.out.println("Test Fail\n7. Confirm details is not selected");
-
+		
 		// Reset Functionality
 		WebElement reset = driver.findElement(By.id("resetBtn"));
 		reset.click();
-		if (driver.findElement(By.id("Company Name")).getAttribute("value").isEmpty())
+		if (driver.findElement(By.id("Company Name")).getAttribute("value").isEmpty() && (!dreamCompanyValue.isSelected())
+					&&(!learningLangValue.isSelected()))
 			System.out.println("Test Pass \n8.Form is reset");
 		else
-			System.out.println("Test Fail \n8.Form is not reset");
+					System.out.println("Test Fail \n8.Form is not reset");
 
 		// Click on the “Go and Practice for it” Button.
 		driver.findElement(By.id("morePractice")).click();
-		
-		//Verify title and URL of redirected page website.
+
+		// Verify title and URL of redirected page website.
 		if (driver.getTitle().equals("Login Signup Demo")
 				&& driver.getCurrentUrl().equals("http://automationbykrishna.com/")) {
-			System.out.println("Test Pass \n9.Website Title is ->" + driver.getTitle() + "\nand Current Url is -> "
+			System.out.println("Test Pass \n9.Website Title is -> " + driver.getTitle() + "\nand Current Url is -> "
 					+ driver.getCurrentUrl());
 		} else
 			System.out.println("Test Fail \n9.Website not redirected");
