@@ -28,17 +28,19 @@ public class FirstTest {
 			driver.findElement(By.id("python")).click();
 			WebElement thoughtworks = driver.findElement(By.id("thoughtworks"));
 			thoughtworks.click();
-			driver.findElement(By.id("terms")).click();
-			driver.findElement(By.id("reset")).click();
+			driver.findElement(By.id("terms")).click();			
+			driver.findElement(By.id("reset")).click();			//Reset form to clear all the input values
 			if (firstName.getAttribute("value").equals("") && !thoughtworks.isSelected() && !java.isSelected()) {
 				System.out.println("Reset Successful");
-				driver.findElement(By.id("redirect")).click();
-				if(driver.getCurrentUrl().equals("http://automationbykrishna.com/") && driver.getTitle().equals("Login Signup Demo"))
-					System.out.println("Test Completed Successfully");
 			}
 			else {
 				System.out.println("Reset Failed");
 			}
+			driver.findElement(By.id("redirect")).click();
+			if(driver.getCurrentUrl().equals("http://automationbykrishna.com/") && driver.getTitle().equals("Login Signup Demo"))
+				System.out.println("User Redirected to correct webpage.Test Completed Successfully");
+			else
+				System.out.println("User Redirected to incorrect webpage. Test Failed");
 		}else {
 			System.out.println("Incorrect URL");
 		}
