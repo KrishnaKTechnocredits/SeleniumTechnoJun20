@@ -115,7 +115,7 @@ public class FormFieldValidations {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver",
-				"/Users/apple/Documents/TechnoGitProject/SeleniumBasics/resources/chromedriver");
+				"./resources/mac/chromedriver");
 		FormFieldValidations formFieldValidations = new FormFieldValidations();
 		formFieldValidations.setElementValueOnForm();
 		formFieldValidations.formReset();
