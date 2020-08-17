@@ -31,8 +31,8 @@ public class NavigateAndVerify {
 			System.out.println("Title verification failed...!!");
 		
 		//Find Elements of login page, Fill details and login
-		driver.findElement(By.id("email")).sendKeys("email/number");
-		driver.findElement(By.id("pass")).sendKeys("Pwd");
+		driver.findElement(By.id("email")).sendKeys("number");
+		driver.findElement(By.id("pass")).sendKeys("pwd");
 		driver.findElement(By.name("login")).click();
 		Thread.sleep(3000);
 		
