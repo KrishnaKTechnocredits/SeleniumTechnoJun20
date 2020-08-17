@@ -47,12 +47,12 @@ public class Assignment1 {
 		company.sendKeys("Syntel");
 		
 		//if female radio button is selected then click on male and vice versa
-		if (driver.findElement(By.id("femaleG"))!=null) {
-			WebElement maleButton= driver.findElement(By.id("maleG"));
-			maleButton.click();
+		if (driver.findElement(By.id("femaleG")).isSelected()) {
+			driver.findElement(By.id("maleG")).click();
+			
 		}else {
-			WebElement femaleButton=driver.findElement(By.id("femaleG"));
-			femaleButton.click();
+			driver.findElement(By.id("femaleG")).click();;
+			
 		}
 		
 		WebElement exp=driver.findElement(By.id("entry2"));
@@ -76,9 +76,9 @@ public class Assignment1 {
 		//click on reset button
 		driver.findElement(By.id("resetBtn")).click();
 		
-		//checking reset button is working or not
-		if(firstName.isSelected()==false && lastName.isSelected()==false &&  email.isSelected()==false && company.isSelected()==false && exp.isSelected()==false && lang.isSelected()==false && learnLang1.isSelected()==false && learnLang2.isSelected()==false && comName.isSelected()==false && terms.isSelected()==false) {
-			System.out.println("Reset is Done Successfully");
+		//checking reset button is working or not (checked on all fields: texts/radio button/check boxes)
+		if(firstName.isSelected()==false && lastName.isSelected()==false &&  email.isSelected()==false && company.isSelected()==false && driver.findElement(By.id("maleG")).isSelected()==false && exp.isSelected()==false && lang.isSelected()==false && learnLang1.isSelected()==false && learnLang2.isSelected()==false && comName.isSelected()==false && terms.isSelected()==false) {
+			System.out.println("Reset is Done Successfully on all fields.");
 		}
 		else {
 			System.out.println("Reset Failed!!");
@@ -87,9 +87,9 @@ public class Assignment1 {
 		//verifying that redirecting to correct URL or not
 		driver.findElement(By.id("morePractice")).click();
 		if(driver.getCurrentUrl().equals("http://automationbykrishna.com/") && driver.getTitle().equals("Login Signup Demo"))
-			System.out.println("You are redirecting to correct page having title Login Signup Demo");
+			System.out.println("You are redirecting to correct page having title Login Signup Demo.");
 		else
-			System.out.println("You redirected to wring site");
+			System.out.println("You have redirected to unexpected site");
 		
 		driver.close();
 	}
