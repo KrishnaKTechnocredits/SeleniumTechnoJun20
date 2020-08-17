@@ -1,3 +1,16 @@
+/*
+ Selenium Assignment 1 : 16th Aug 2020
+
+1) Open the form in browser and verify Title is “TECHNOCREDITS”. 
+2) Fill all details in the form, for Gender radio button if ‘Female’ radio button is by default selected then select ‘Male’   radio button and vice versa.
+3) Reset the form, for that click on “Reset form in same tab” button.
+4) Verify Reset works properly on your text field, radio button and checkbox. (For each type, min one validation is required.)
+5) Click on the “Go and Practice for it” Button.
+6) Website redirect to “automationbykrishna.com”.
+7) Verify title and URL of redirected page website.
+   Title should be “Login Signup Demo” and the URL should be “http://automationbykrishna.com/”.
+ */
+ 
 package ajit;
 
 import org.openqa.selenium.By;
