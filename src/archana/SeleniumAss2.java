@@ -21,12 +21,12 @@ public class SeleniumAss2 {
 
 		// enter email and Pass
 		driver.findElement(By.id("email")).sendKeys("9028553461");
-		driver.findElement(By.name("pass")).sendKeys("Harsh@1017");
+		driver.findElement(By.name("pass")).sendKeys("myname");
 		driver.findElement(By.name("login")).click();
 		Thread.sleep(500);
 
 		// verify login
-		if (driver.getTitle().equals("Facebook"))
+		if (driver.getTitle().contains("Facebook"))
 			System.out.println("\n Login sucessfully");
 		else
 			System.out.println("\n Login Fail");
@@ -35,7 +35,7 @@ public class SeleniumAss2 {
 	void navigateOperation() {
 		driver.navigate().to(" https://www.google.com/");
 		driver.navigate().back();
-		if (driver.getTitle().equals("(2) Facebook"))
+		if (driver.getTitle().contains("Facebook"))
 			System.out.println("\n Back--Naviagte to back sucessfully");
 		else
 			System.out.println("\n Back--Not naviagte to back");
