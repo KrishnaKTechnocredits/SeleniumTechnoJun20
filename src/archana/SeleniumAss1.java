@@ -9,7 +9,7 @@ public class SeleniumAss1 {
 
 	void launchBrowser() {
 		// Launch chrome with form
-		System.setProperty("webdriver.chrome.driver", "E:\\JAVA_class\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./resources/windows/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("file:///E:/JAVA_class/Selenium/Ass1/SeleniumAssignment_1.html");
 		// verify Title
@@ -18,6 +18,7 @@ public class SeleniumAss1 {
 			System.out.println("Correct page loaded");
 		else
 			System.out.println("Incorrect page loaded");
+		driver.navigate().back();
 	}
 
 	void fillAllDetails() {
@@ -25,10 +26,10 @@ public class SeleniumAss1 {
 		driver.findElement(By.id("last name")).sendKeys("Nawale");
 		driver.findElement(By.id("E-mail")).sendKeys("A.N@gmail.com");
 		driver.findElement(By.id("Company Name")).sendKeys("Techno");
-		if (driver.findElement(By.id("maleG")).isSelected())
-			driver.findElement(By.id("femaleG")).click();
-		else
+		if (driver.findElement(By.id("femaleG")).isSelected())
 			driver.findElement(By.id("maleG")).click();
+		else
+			driver.findElement(By.id("femaleG")).click();
 		driver.findElement(By.id("fresher")).click();
 		driver.findElement(By.id("java")).click();
 		driver.findElement(By.id("python")).click();
