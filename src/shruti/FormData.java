@@ -12,22 +12,28 @@ package shruti;
 
 		void dataEntryinForm() {
 			System.setProperty("webdriver.chrome.driver",
-					".\\Resources\\chromedriver.exe");
+					".\\Resources\\windows\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 			driver.get("file:///D:/Technocredit/Selenium%20recordings/@Selenium/SeleniumAssignment_1.html");
 			WebElement firstName = driver.findElement(By.id("first name"));
 			firstName.sendKeys("Shruti");
 			WebElement lastName = driver.findElement(By.id("last name"));
 			lastName.sendKeys("Dubey");
-			WebElement email = driver.findElement(By.id("E-mail"));
-			email.sendKeys("shrutidubey@gmail.com");
+			driver.findElement(By.id("E-mail")).sendKeys("shrutidubey@gmail.com");
 			WebElement companyName = driver.findElement(By.id("Company Name"));
 			companyName.sendKeys("Infogain");
 
-			WebElement gender = driver.findElement(By.id("maleG"));
-			if (gender.isSelected()) {
-				driver.findElement(By.id("femaleG")).click();
+			//WebElement gender = driver.findElement(By.id("maleG"));
+			if (driver.findElement(By.id("femaleG")).isSelected()){
+				driver.findElement(By.id("maleG")).click();
+				System.out.println("you have selected MALE gender");	
 			}
+			else if(driver.findElement(By.id("maleG")).isSelected()){
+				driver.findElement(By.id("femaleG")).click();
+				System.out.println("you have selected FEMALE gender");
+			}
+				
+			
 			WebElement experience = driver.findElement(By.id("entry2"));
 			experience.click();
 			WebElement language = driver.findElement(By.id("python"));
@@ -43,8 +49,7 @@ package shruti;
 			
 			// when Reset is clicked
 			driver.findElement(By.id("resetBtn")).click();
-			if (driver.findElement(By.id("first name")).getAttribute("value")
-					.equals(""))
+			if (firstName.getAttribute("value").equals(""))
 				System.out.println("Reset is Done Successfully");
 			else
 				System.out.println("Reset Failed!!");
@@ -56,6 +61,8 @@ package shruti;
 			else {
 				System.out.println("Not able to naviigate");
 			}	
+			
+			driver.close();
 		}
 
 		public static void main(String[] args) {
