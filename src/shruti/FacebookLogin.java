@@ -32,17 +32,20 @@ public class FacebookLogin {
 		Thread.sleep(1000);
 
 		if (driver.getTitle().equals("Sign up for Facebook | Facebook")) {
-
+			System.out.println("You are on facebook Sign up page");
 			driver.findElement(By.name("firstname")).sendKeys("Shruti");
 			String firtName = driver.findElement(By.name("firstname"))
 					.getAttribute("value");
+			System.out.println("Firstname: "+firtName );
 
 			driver.findElement(By.name("lastname")).sendKeys("Dubey");
 			String lastName = driver.findElement(By.name("lastname"))
 					.getAttribute("value");
+			System.out.println("Lastname: "+lastName );
 
 			driver.findElement(By.name("reg_email__")).sendKeys("999899989");
-			//String email = driver.findElement(By.name("reg_email__")).getAttribute("value");
+			String email = driver.findElement(By.name("reg_email__")).getAttribute("value");
+			System.out.println("Phone Number: "+email );
 
 			driver.findElement(By.name("reg_passwd__")).sendKeys("*********");
 			//String password = driver.findElement(By.name("reg_passwd__")).getAttribute("value");
@@ -55,12 +58,13 @@ public class FacebookLogin {
 
 			Select yearSelect = new Select(driver.findElement(By.id("year")));
 			yearSelect.selectByVisibleText("1992");
+			
 
 			driver.findElement(By.xpath("//input[@id='u_0_4']")).click();
 			driver.findElement(By.name("websubmit")).click();
 
 			if (firtName.equals("Shruti") && lastName.equals("Dubey"))
-				System.out.println("data is valid");
+				System.out.println("data is valid - Login Test passed");
 			else
 				System.out.println("Invalid Data");
 
