@@ -75,6 +75,7 @@ public class FBSingUP {
 		} else
 			System.out.println("Feilds validation failed");
 		driver.findElement(By.xpath("//button[@name='websubmit']")).click();
+		driver.quit();
 	}
 
 	public static void main(String[] args) {
@@ -82,7 +83,7 @@ public class FBSingUP {
 
 		FBSingUP fbPage = new FBSingUP();
 		fbPage.fbSingUP();
-		driver.quit();
+		
 
 	}
 
