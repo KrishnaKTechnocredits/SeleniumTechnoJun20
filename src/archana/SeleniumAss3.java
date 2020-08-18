@@ -13,7 +13,7 @@ public class SeleniumAss3 {
 		System.out.println("os : " + os);
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"
 				: os.contains("mac") ? "./resources/mac/chromedriver" : null;
-		System.setProperty("webdriver.chrome.driver", "./resources/windows/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", path);
 		driver = new ChromeDriver();
 		driver.get(url);
 	}
