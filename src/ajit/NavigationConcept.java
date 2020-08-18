@@ -32,8 +32,8 @@ public class NavigationConcept {
 			System.out.println("Title-LoginPage Mismatched");
 		
 		//Enter EmailID, Password and Click on LogIn
-		driver.findElement(By.id("email")).sendKeys("firkee");
-		driver.findElement(By.id("pass")).sendKeys("Ajit@1212");
+		driver.findElement(By.id("email")).sendKeys("firkeeee1");
+		driver.findElement(By.id("pass")).sendKeys("firkee@121212");
 		driver.findElement(By.name("login")).click();
 		Thread.sleep(8000);
 		
