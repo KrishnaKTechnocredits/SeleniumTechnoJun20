@@ -26,7 +26,7 @@ public class BackAndForthWebPageTest {
 		
 		driver.findElement(By.id("email")).sendKeys("patil.suparna.c@gmail.com");
 		System.out.println("User name enter successfully");
-		driver.findElement(By.id("pass")).sendKeys("Shaurya@29");
+		driver.findElement(By.id("pass")).sendKeys("*****");
 		System.out.println("Password enter successfully");
 		
 		driver.findElement(By.name("login")).click();
