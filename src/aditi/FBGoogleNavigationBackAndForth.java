@@ -33,7 +33,7 @@ public class FBGoogleNavigationBackAndForth {
 		driver.findElement(By.id("u_0_b")).click();
 		Thread.sleep(5000);
 		// Validation - (Later add logic to check logout button/link to check user is logged in or not. )
-		System.out.println(driver.getTitle().equals("(1) Facebook") ? "Test Pass - User is logged in"
+		System.out.println(driver.getTitle().contains("Facebook") ? "Test Pass - User is logged in"
 				: "Test Failed - User Unable to login");
 	}
 
@@ -43,7 +43,7 @@ public class FBGoogleNavigationBackAndForth {
 		// History page
 		driver.navigate().back();
 		Thread.sleep(3000);
-		System.out.println(driver.getTitle().equals("(1) Facebook")
+		System.out.println(driver.getTitle().contains("Facebook")
 				? "Test Pass - Back page works - History Page loaded successfully - " + driver.getCurrentUrl()
 				: "Test Fail - Issue while navigating back to  History Page");
 		// Forward navigation

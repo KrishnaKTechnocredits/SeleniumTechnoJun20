@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DemoTest {
-
-
-
+	
 	public static void main(String[] args) {
 		String os = System.getProperty("os.name").toLowerCase();
 		System.out.println("os : "+ os);
@@ -19,5 +17,5 @@ public class DemoTest {
 		System.out.println("AutomationByKrishna website open successfully.");
 		driver.quit();
 	}
-	
+
 }
