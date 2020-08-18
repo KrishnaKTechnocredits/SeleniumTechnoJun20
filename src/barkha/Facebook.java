@@ -1,7 +1,7 @@
 /*  1. Navigate to facebook sign in page using url https://www.facebook.com/
 	2. Verify page title is “Facebook – log in or sign up”.
 	3. Enter email id & password, and click on ‘Log In’ button.
-	4. Verify page title is “(1) Facebook”.
+	4. Verify page title is “Facebook”.
 	5. Now using navigation command go to https://www.google.com/
 	6. Verify when user navigate back at that time page title is “(1) Facebook”.
 	7. Verify when user navigate forward at that time page title is “Google”
@@ -30,13 +30,13 @@ public class Facebook {
 		
 		//Enter email id & password, and click on ‘Log In’ button.
 		driver.findElement(By.name("email")).sendKeys("barkhapatle18@gmail.com");
-		driver.findElement(By.id("pass")).sendKeys("******");
+		driver.findElement(By.id("pass")).sendKeys("*******");
 		driver.findElement(By.id("u_0_b")).click();
 		Thread.sleep(1000);
 		
-		//Verify page title is “(1) Facebook”
-		if (driver.getTitle().equals("(1) Facebook")) 
-			System.out.println("After clickig on loging button, Facebook page is opening having title (1) Facebook.");
+		//Verify page title is “Facebook”
+		if (driver.getTitle().contains("Facebook")) 
+			System.out.println("After clickig on loging button, Facebook page is opening having title Facebook.");
 		else
 			System.out.println("You are on Wrong Page.");
 		
@@ -48,12 +48,12 @@ public class Facebook {
 		else
 			System.out.println("You are on Wrong Page.");
 		
-		//Verify when user navigate back at that time page title is “(1) Facebook”
+		//Verify when user navigate back at that time page title is “Facebook”
 		driver.navigate().back();
 		Thread.sleep(1000);
 		
-		if (driver.getTitle().equals("(1) Facebook")) 
-			System.out.println("Backword Navigation Successful(Google->Facebook):You are on Facebook page having title is (1) Facebook.");
+		if (driver.getTitle().contains("Facebook")) 
+			System.out.println("Backword Navigation Successful(Google->Facebook):You are on Facebook page having title is Facebook.");
 		else
 			System.out.println("Backword Navigation Unsuccessful.");
 		
