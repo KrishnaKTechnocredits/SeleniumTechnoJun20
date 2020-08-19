@@ -37,9 +37,9 @@ public class Assignment_4 {
 
 		String currentURl = driver.getCurrentUrl();
 		if (currentURl.equals(ExepectedURL))
-			System.out.println("user is scuceesfully hit the URL");
+			System.out.println("user is successfully hit the URL");
 		else
-			System.out.println("user is not scuceesfully hit the URL");
+			System.out.println("user is not successfully hit the URL");
 
 		List<WebElement> linkList = driver.findElements(By.xpath("//a"));
 		System.out.println("output: " + linkList.size() + " links on the page");
