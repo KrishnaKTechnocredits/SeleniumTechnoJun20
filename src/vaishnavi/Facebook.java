@@ -35,7 +35,7 @@ public class Facebook {
 
 		// Verify Page title
 		Thread.sleep(3000);
-		if (driver.getTitle().equals("(2) Facebook"))
+		if (driver.getTitle().contains("Facebook"))
 			System.out.println("Title for Facebook is verified");
 		else
 			System.out.println("You failed to logIn" + driver.getTitle());
@@ -47,7 +47,7 @@ public class Facebook {
 
 		// Verifying again if title is Facebook
 		Thread.sleep(3000);
-		if (driver.getTitle().equals("(2) Facebook"))
+		if (driver.getTitle().contains("Facebook"))
 			System.out.println("Title for Facebook is verified - After navigating");
 		else
 			System.out.println("You failed to navigate back" + driver.getTitle());
