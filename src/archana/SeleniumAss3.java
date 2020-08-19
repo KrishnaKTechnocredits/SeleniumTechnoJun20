@@ -13,7 +13,7 @@ public class SeleniumAss3 {
 		System.out.println("os : " + os);
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"
 				: os.contains("mac") ? "./resources/mac/chromedriver" : null;
-		System.setProperty("webdriver.chrome.driver", "./resources/windows/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", path);
 		driver = new ChromeDriver();
 		driver.get(url);
 	}
@@ -38,7 +38,7 @@ public class SeleniumAss3 {
 		Select yearSelect = new Select(driver.findElement(By.xpath("//select[@name=\"birthday_year\"]")));
 		yearSelect.selectByVisibleText("1998");
 		// select gender
-		driver.findElement(By.xpath("//input[@name=\"sex\"]")).click();
+		driver.findElement(By.xpath("//label[@for=\"u_0_4\"]")).click();
 		// clicked on signup
 		driver.findElement(By.xpath("//button[@id=\"u_0_14\"]")).click();
 	}
