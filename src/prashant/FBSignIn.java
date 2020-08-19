@@ -59,7 +59,7 @@ public class FBSignIn {
 		
 		System.out.println("Form submitted successfully");
 		
-		//browser closed
+		//browser closed 
 		driver.close();
 	}
 
