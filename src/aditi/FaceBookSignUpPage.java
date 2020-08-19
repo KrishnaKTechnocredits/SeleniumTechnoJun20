@@ -1,3 +1,15 @@
+/*
+1. Navigate to facebook sign in page using url https://www.facebook.com/r.php
+2. Verify page title is “Sign up for Facebook | Facebook”.
+3. Enter Firstname, surname.
+4. Enter wrong mobile number (like 788898989hjhj88)
+5. Enter any combination of password
+6. Using Select class select Date, Month and Year using sequentially selectByValue(), selectByIndex() and selectByVisibleText() 
+7. Select gender from given radio button options.
+8. Click on SignUp button.
+(No need to validate error occurred for not entering a valid phone number.)
+*/
+
 package aditi;
 
 import org.openqa.selenium.By;
