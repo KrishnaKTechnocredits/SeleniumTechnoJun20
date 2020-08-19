@@ -24,10 +24,7 @@ Output : Synechron */
 
 public class MissingLink {
 
-	void findLinksCount(WebDriver driver, List<WebElement> li) {
-
-		// Maximize the page
-		driver.manage().window().maximize();
+	void findLinksCount(List<WebElement> li) {
 
 		// Counting Number of links on the page through xpath
 		System.out.println("Number of links count on this page: " + li.size());
@@ -39,7 +36,7 @@ public class MissingLink {
 		}
 	}
 
-	void findMissingLink(WebDriver driver, List<WebElement> li) {
+	void findMissingLink(List<WebElement> li) {
 		System.out.println("==================================");
 		for (WebElement text : li) {
 			try {
@@ -60,8 +57,8 @@ public class MissingLink {
 		driver.get("file:///C:/Users/vaish/Desktop/Selenium_Recordings/MissingLink.html");
 		List<WebElement> li = driver.findElements(By.xpath("//a"));
 		MissingLink missingLink = new MissingLink();
-		missingLink.findLinksCount(driver, li);
-		missingLink.findMissingLink(driver, li);
+		missingLink.findLinksCount(li);
+		missingLink.findMissingLink(li);
 	}
 
 }
