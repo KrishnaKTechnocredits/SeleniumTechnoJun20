@@ -53,7 +53,7 @@ public class FacebookSignupPageValidation {
 		driver.findElement(By.xpath("//span/input[@value='1'and @name='sex']")).click();
 
 		// Click on SignUp button.
-		driver.findElement(By.xpath("//input[@name='firstname']")).click();
+		driver.findElement(By.xpath("//div[@class='_1lch']/button[@name='websubmit']")).click();
 	}
 
 	public static void main(String[] args) {
