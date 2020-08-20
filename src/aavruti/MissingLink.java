@@ -17,35 +17,33 @@ public class MissingLink {
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.get("file:///G:/TechnoGitProject/SeleniumTechnoJun20/resources/forms/MissingLink.html");
 		return driver;
 	}
 
 	void findMissingLink() {
-		WebDriver driver = driverSetup();
-		driver.get("file:///G:/TechnoGitProject/SeleniumTechnoJun20/resources/forms/MissingLink.html");
+		WebDriver driver = driverSetup();		
 
-		if(driver.findElement(By.xpath("//p")).getText().equals("Missing Link")) {
+		try {
 			List<WebElement> linkList = driver.findElements(By.xpath("//a"));
 			System.out.println("\n" + linkList.size() + " links on the page.");
 
-			String missingLink = "";
-			String hrefAttributeMissing = "";
 			System.out.println("\nThe list of links are : ");
 			for(WebElement linkName : linkList) {
-				System.out.println(linkName.getText());
 				try {
-					if(linkName.getAttribute("href").equals(""))
-						missingLink += linkName.getText();
+					System.out.println(linkName.getAttribute("href").equals("") 
+					? "Missing Links --> " + linkName.getText() : linkName.getText());
 				}
 				catch(NullPointerException ne) {
-					hrefAttributeMissing += linkName.getText();
+					System.out.println("href Attribute Missing links --> " + linkName.getText());
 				}
 			}
-			System.out.println("\nMissing Links --> " + missingLink);
-			System.out.println("href Attribute Missing links --> " + hrefAttributeMissing);
 		}
-		else {
-			System.out.println("URL is not correct/Not properly loaded");
+		catch(NoSuchElementException ne) {
+			System.out.println("Given Element Not Found");
+		}
+		finally {
+			driver.quit();
 		}
 	}
 
