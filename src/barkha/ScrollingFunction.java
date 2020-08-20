@@ -34,47 +34,37 @@ public class ScrollingFunction extends PredefinedFunctions {
 		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//select[1]")));
 
 		// Print total number of options in the dropdown
-		Select select = new Select(driver.findElement(By.xpath("//select[1]")));
+		Select select = new Select(driver.findElement(By.xpath("//select[1]")));  //select[1] is xpath of select tag.
 		List<WebElement> listOfOptions = select.getOptions();
-		System.out.println("Total Number of options present in the Dropdown are: "+listOfOptions.size());
-		
+		System.out.println("Total Number of options present in the Dropdown are: " + listOfOptions.size());
+
 		System.out.println("===========================================================");
 
-		// Select all even numbers and print all selected options
-		System.out.println("Selected Options are: ");
+		// Select all even numbers and print all selected options and desected options
 		for (WebElement num : listOfOptions) {
 			if (Integer.parseInt(num.getText()) % 2 == 0) {
 				select.selectByVisibleText(num.getText());
-					System.out.print(num.getText() + " ");
-				}
-			}
-			
-		System.out.println("\n===========================================================");		
-			
-		// Print all deselected options
-		System.out.println("Not Selected Options are: ");
-		for (WebElement num : listOfOptions) {
-			if (Integer.parseInt(num.getText()) % 2 != 0) {
+				System.out.println(num.getText() + " is selected.");
+			} else
 
-				select.selectByVisibleText(num.getText());
-				System.out.print(num.getText() + " ");
-			}
+				System.out.println(num.getText() + " is not selected.");
 		}
-		
-		System.out.println("\n===========================================================");
+		System.out.println("===========================================================");
 
-		//Using deselectAll() method, deselect all the optionsand verify total number of selected options is zero
-		Select select1=new Select(driver.findElement(By.xpath("//select[2]")));
-		select1.deselectAll();		
+		// Using deselectAll() method, deselect all the options and verify total number
+		// of selected options is zero
+		
+		Select select1 = new Select(driver.findElement(By.xpath("//select[2]")));   // //select[2] is xpath of multiple tag as deselect can call on it only.
+		select1.deselectAll();
 		Thread.sleep(2000);
-		
-		System.out.println("Total number of Selected Options after Deselecting all: "+select1.getAllSelectedOptions().size());
-		
-		driver.close();
+
+		System.out.println("Total number of Selected Options after Deselecting all: " + select1.getAllSelectedOptions().size());
+
+		driver.close();		
 	}	
 	public static void main(String[] args) throws InterruptedException {
 		ScrollingFunction scroll = new ScrollingFunction();
 		scroll.getURL("http://automationbykrishna.com/");
 		scroll.selectOptionFromDrodown();
 	}
-}	
+}
