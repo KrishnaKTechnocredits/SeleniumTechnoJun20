@@ -17,6 +17,7 @@ public class DropDownDemo {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
+		
 		return driver;
 	}
 
