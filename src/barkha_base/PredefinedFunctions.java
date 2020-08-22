@@ -20,4 +20,8 @@ public class PredefinedFunctions {
 		
 		return driver;
 	}
+	
+	public WebDriver start() {
+		return start("http://automationbykrishna.com/");
+	}
 }		
