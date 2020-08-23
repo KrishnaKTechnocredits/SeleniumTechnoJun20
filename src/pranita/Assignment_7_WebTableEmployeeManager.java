@@ -23,16 +23,9 @@ public class Assignment_7_WebTableEmployeeManager extends PredefinedFunctions {
 		driver = start(url);
 	}
 
-	public static void main(String[] args) {
-		Assignment_7_WebTableEmployeeManager assignment_7_WebTableEmployeeManager = new Assignment_7_WebTableEmployeeManager();
-		assignment_7_WebTableEmployeeManager.setUp("http://automationbykrishna.com/");
-		assignment_7_WebTableEmployeeManager.numbOfEmployeePerManager();
-	}
-
 	// 1) Find how many employees reporting to each manager ID.
 	void numbOfEmployeePerManager() {
 		driver.findElement(By.linkText("Demo Tables")).click();
-		// Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		HashMap<String, Integer> employeePerManager = new HashMap<String, Integer>();
@@ -68,4 +61,10 @@ public class Assignment_7_WebTableEmployeeManager extends PredefinedFunctions {
 			}
 		}
 	}
+	public static void main(String[] args) {
+		Assignment_7_WebTableEmployeeManager assignment_7_WebTableEmployeeManager = new Assignment_7_WebTableEmployeeManager();
+		assignment_7_WebTableEmployeeManager.setUp("http://automationbykrishna.com/");
+		assignment_7_WebTableEmployeeManager.numbOfEmployeePerManager();
+	}
+
 }
