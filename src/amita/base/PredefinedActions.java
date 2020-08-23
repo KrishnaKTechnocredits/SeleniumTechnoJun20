@@ -15,6 +15,11 @@ public class PredefinedActions {
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		driver.get(url);
+		driver.manage().window().maximize();
 		return driver;
+	}
+	
+	public WebDriver start() {
+		return start("http://automationbykrishna.com/");		
 	}
 }
