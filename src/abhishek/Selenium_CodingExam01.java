@@ -19,22 +19,22 @@ public class Selenium_CodingExam01 extends PredefinedActions {
 
 	void validatelink() throws InterruptedException {
 		int tableRows = driver.findElements(By.xpath("//table/tbody/tr")).size();
-		System.out.println(tableRows);
+		System.out.println("total row in table:" +tableRows);
 
 		for (int index = 1; index <= tableRows; index++) {
 			WebElement link = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[3]/a"));
 			String companyName = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[2]")).getText();
 
 			if (link.getAttribute("href").equals("")) {
-				System.out.println(companyName + " company missing link");
+				System.out.println("company missing link :" +companyName);
 			} else {
 				String tableTitle = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[4]")).getText();
 				link.click();
 				Thread.sleep(2000);
 				if (driver.getTitle().equals(tableTitle)) {
-					System.out.println("company title mached " + companyName);
+					System.out.println("company title matched : " + companyName);
 				} else
-					System.out.println("company title not mached  " + companyName);
+					System.out.println("company title not matched : " + companyName);
 			}
 			driver.navigate().back();
 			Thread.sleep(2000);
