@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ComapnyTitles {
 
-	void verifyCompanyTitles(WebDriver driver, List<WebElement> listOfLinks) {
+	void verifyCompanyTitles(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(15000, TimeUnit.MILLISECONDS);
 		try {
 			int tablerows = driver.findElements(By.xpath("//table/tbody/tr")).size();
@@ -49,8 +49,7 @@ public class ComapnyTitles {
 		WebDriver driver = new ChromeDriver();
 		driver.get("file:///C:/Users/vaish/Desktop/TechnoGitProject/SeleniumTechnoJun20/resources/forms/Exam-1.html");
 		driver.manage().window().maximize();
-		List<WebElement> listOfLinks = driver.findElements(By.xpath("//a"));
-		new ComapnyTitles().verifyCompanyTitles(driver, listOfLinks);
+		new ComapnyTitles().verifyCompanyTitles(driver);
 	}
 
 }
