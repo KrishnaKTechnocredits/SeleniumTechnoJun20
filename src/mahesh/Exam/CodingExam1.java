@@ -3,7 +3,6 @@ package mahesh.Exam;
 import mahesh.base.PredefinedActions;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,7 +23,6 @@ public class CodingExam1 extends PredefinedActions{
 	}
 	
 	void displayTitleMismatch(int countOfRows) {
-		int countofRows = driver.findElements(By.xpath("//tbody/tr")).size();
 		for (int index =1; index<=countOfRows;index++) {
 			driver.manage().timeouts().implicitlyWait(5000,TimeUnit.MILLISECONDS);
 			String webpageTitle = driver.findElement(By.xpath("//tbody/tr["+index+"]/td[4]")).getText();
