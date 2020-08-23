@@ -25,22 +25,23 @@ public class CodingExam1 {
 			List<WebElement> companyLink = driver.findElements(By.xpath("//table/tbody/tr[" + index + "]/td[3]/a"));
 			String companyName = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[2]")).getText();
 			String linkTitle = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[4]")).getText();
-			
-			for( WebElement currentLink : companyLink){
+
+			for (WebElement currentLink : companyLink) {
+				if(!currentLink.getAttribute("href").equals("")){
 				currentLink.click();
-				if(driver.getTitle().equals(linkTitle)){
-					System.out.println(companyName + " has a valid title. and title is : "+linkTitle );
-				}
-				else{
+				if (driver.getTitle().equals(linkTitle)) {
+					System.out.println(companyName+ " has a valid title and title is : "+ linkTitle);
+				} else {
 					System.out.println("Title does not match for "+ companyName);
 				}
 			}
+				else{
+					System.out.println(companyName+ " has no link");
+				}
 			driver.navigate().back();
-
 		}
-
 	}
-
+	}
 	public static void main(String[] args) {
 		CodingExam1 codingExam1 = new CodingExam1();
 		codingExam1.verifyLink();
