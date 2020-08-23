@@ -21,13 +21,14 @@ public class ComapnyTitles {
 			int tablerows = driver.findElements(By.xpath("//table/tbody/tr")).size();
 			for (int index = 1; index <= tablerows; index++) {
 				WebElement linkPath = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[3]"));
+				String text = linkPath.getText(); 
 				String title = driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[4]")).getText();
 				if (driver.findElement(By.xpath("//table/tbody/tr[" + index + "]/td[3]/a")).getAttribute("href").length() != 0) {
 					linkPath.click();
 					if (driver.getTitle().equals(title)) {
-						System.out.println("Title Verified for: " + title);
+						System.out.println("Title Verified for: " + text);
 					} else {
-						System.out.println("Test Failed : Title is not correct for:  " + title);
+						System.out.println("Test Failed : Title is not correct for:  " + text);
 					}
 					driver.navigate().back();
 				} else {
