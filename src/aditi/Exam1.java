@@ -50,6 +50,7 @@ public class Exam1 extends PredefinedActions {
 		exam1.driverSetup(
 				"file:///Users/apple/Documents/TechnoGitProject/SeleniumTechnoJun20/resources/forms/Exam-1.html");
 		exam1.linkvalidation();
+		exam1.driver.quit();
 	}
 
 }
