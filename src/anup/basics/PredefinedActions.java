@@ -13,8 +13,11 @@ public class PredefinedActions {
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(url);
+		driver.navigate().to(url);
 		return driver;
+	}
+	public WebDriver  start() {
+		return start("file:///Users/amitarout/Desktop/TechnoGitProject/SeleniumJun20/SeleniumTechnoJun20/resources/forms/Exam-1.html");
 	}
 
 }
