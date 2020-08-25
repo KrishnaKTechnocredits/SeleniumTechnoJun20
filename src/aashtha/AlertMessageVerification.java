@@ -39,13 +39,14 @@ public class AlertMessageVerification extends PredefinedActions {
 		String firstName = properties.getProperty("firstName");
 		String lastName = properties.getProperty("lastName");
 		String companyName = properties.getProperty("companyName");
+		String expectedMessage = firstName + " and " + lastName + " and " + companyName;
 		driver.findElement(By.xpath("//input[@id='UserFirstName']")).sendKeys(firstName);
 		driver.findElement(By.xpath("//input[@id='UserLastName']")).sendKeys(lastName);
 		driver.findElement(By.xpath("//input[@id='UserCompanyName']")).sendKeys(companyName);
 		driver.findElement(By.xpath("//div[@id='firstRow']/div[1]/section/div/div[4]/button")).click();
 		Alert alert = driver.switchTo().alert();
 		String actualMessage = alert.getText();
-		if (actualMessage.equals(firstName + " and " + lastName + " and " + companyName))
+		if (actualMessage.equals(expectedMessage))
 			System.out.println("Alert message verification : Passed");
 		else
 			System.out.println("Alert message verification : Failed");
