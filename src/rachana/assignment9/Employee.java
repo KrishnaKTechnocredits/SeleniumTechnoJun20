@@ -2,10 +2,10 @@ package rachana.assignment9;
 
 public class Employee {
 	
-	String employeeId;
-	String employeeManagerId;
-	String employeeName;
-	String  employeeDepartment;
+	private String employeeId;
+	private String employeeManagerId;
+	private String employeeName;
+	private String employeeDepartment;
 	
 	public String getEmployeeId() {
 		return employeeId;
@@ -50,23 +50,19 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (employeeDepartment == null) {
-			if (other.employeeDepartment != null)
+		if (employeeDepartment == null && other.employeeDepartment != null) {
 				return false;
 		} else if (!employeeDepartment.equals(other.employeeDepartment))
 			return false;
-		if (employeeId == null) {
-			if (other.employeeId != null)
+		if (employeeId == null && other.employeeId != null ) {
 				return false;
 		} else if (!employeeId.equals(other.employeeId))
 			return false;
-		if (employeeManagerId == null) {
-			if (other.employeeManagerId != null)
+		if (employeeManagerId == null && other.employeeManagerId != null) {
 				return false;
 		} else if (!employeeManagerId.equals(other.employeeManagerId))
 			return false;
-		if (employeeName == null) {
-			if (other.employeeName != null)
+		if (employeeName == null && other.employeeName != null ) {
 				return false;
 		} else if (!employeeName.equals(other.employeeName))
 			return false;

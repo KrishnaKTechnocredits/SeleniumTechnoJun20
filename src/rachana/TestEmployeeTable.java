@@ -17,7 +17,6 @@ public class TestEmployeeTable extends PredefinedActions{
 	WebDriver driver;
 	List<Employee> emplist = new ArrayList<Employee>();
 	
-	
 	void setUp() {
 		driver = start();
 	}
@@ -25,20 +24,17 @@ public class TestEmployeeTable extends PredefinedActions{
 	void navigateToMenu() {
 		driver.findElement(By.xpath("//a[@id='demotable']")).click();
 	}
+	
 	void fetchTableData() {
 		
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 		List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table table-striped']/tbody/tr"));
 		for(int i=1;i<=rows.size();i++) {
-			String empid = driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[2]")).getText();
-			String empname =  driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[3]")).getText();
-			String empmanagerid =  driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[4]")).getText();
-			String empdepartmentid = driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[5]")).getText();
 			Employee e = new Employee();
-			e.setEmployeeId(empid);
-			e.setEmployeeName(empname);
-			e.setEmployeeManagerId(empmanagerid);
-			e.setEmployeeDepartment(empdepartmentid);
+			e.setEmployeeId( driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[2]")).getText());
+			e.setEmployeeName(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[3]")).getText());
+			e.setEmployeeManagerId( driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[4]")).getText());
+			e.setEmployeeDepartment(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+i+"]/td[5]")).getText());
 			emplist.add(e);
 		}
 	}
@@ -57,8 +53,12 @@ public class TestEmployeeTable extends PredefinedActions{
 				templist.add(e);
 			}
 		}
-		
 	}
+	
+	void tearDown() {
+		driver.close();
+	}
+	
 	public static void main(String[] args) {
 		
 		TestEmployeeTable testemptable = new TestEmployeeTable();
