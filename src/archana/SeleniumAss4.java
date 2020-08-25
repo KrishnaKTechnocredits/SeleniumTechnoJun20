@@ -38,6 +38,8 @@ public class SeleniumAss4 {
 					System.out.println("Missing Link ->" + links.getText());
 			} catch (NullPointerException n) {
 				System.out.println("Missing Attribute->" + links.getText());
+			} finally {
+				driver.quit();
 			}
 		}
 	}
@@ -46,7 +48,6 @@ public class SeleniumAss4 {
 		SeleniumAss4 assignment4 = new SeleniumAss4();
 		List<WebElement> listOfLink = assignment4.totalLinks();
 		assignment4.missingLink(listOfLink);
-		driver.quit();
 
 	}
 }
