@@ -17,4 +17,8 @@ public class PreDefinedActions {
 		
 		return driver;
 	}
+	
+	public WebDriver start() {
+		return start("http://automationbykrishna.com/");
+	}
 }
