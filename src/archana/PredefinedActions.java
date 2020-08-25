@@ -15,4 +15,5 @@ public class PredefinedActions {
 		driver.get(url);
 		return driver;
 	}
+	
 }
