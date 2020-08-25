@@ -25,11 +25,11 @@ public class ValidateUsernameInWebTable {
 					.findElement(By.xpath("//table[@id='table1']//tbody/tr[" + index + "]/td[4]")).getText();
 
 			if (!actualUserName.equals(ExpectedUserName)) {
-				System.out.println("Test Fail: UserName is not matched with expected username for user" + firstName
+				System.out.println("Test Fail: UserName is not matched with expected username for user " + firstName
 						+ " " + lastName);
 
 			} else
-				System.out.println("Test Fail: UserName is not matched with expected username for user" + firstName
+				System.out.println("Test Pass: UserName is  matched with expected username for user " + firstName
 						+ " " + lastName);
 		}
 	}
