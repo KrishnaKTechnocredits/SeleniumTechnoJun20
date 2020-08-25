@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import madhura.base.PredifinedActions;
+import madhura.base.PredefinedActions;
 
 /*Selenium Assignment-5 :  20th Aug 2020
 Go to AutomationByKrishna website -> Basic Elements -> MultiDropdown
@@ -18,7 +18,7 @@ Go to AutomationByKrishna website -> Basic Elements -> MultiDropdown
 4) Print all deselected options.
 5) Using deselectAll() method, deselect all the options.
 6) Now verify total number of selected options is zero [hint : getAllSelectedOptions()]*/
-public class MultiDropdown extends PredifinedActions {
+public class MultiDropdown extends PredefinedActions {
 	WebDriver driver;
 
 	void setup(String url) {

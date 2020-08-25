@@ -16,8 +16,7 @@ public class PredefinedActions {
 		driver.navigate().to(url);
 		return driver;
 	}
-	public WebDriver  start() {
-		return start("file:///Users/amitarout/Desktop/TechnoGitProject/SeleniumJun20/SeleniumTechnoJun20/resources/forms/Exam-1.html");
-	}
-
+	
+	public WebDriver start() {
+		return start("http://automationbykrishna.com");
 }
