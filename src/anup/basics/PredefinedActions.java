@@ -16,8 +16,7 @@ public class PredefinedActions {
 		driver.navigate().to(url);
 		return driver;
 	}
-	public WebDriver  start() {
-		return start("http://automationbykrishna.com/");
-	}
-
+	
+	public WebDriver start() {
+		return start("http://automationbykrishna.com");
 }
