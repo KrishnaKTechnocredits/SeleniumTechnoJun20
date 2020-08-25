@@ -18,14 +18,8 @@ public class PredefinedActions {
 		driver.manage().window().maximize();
 		return driver;
 	}
-
-	
 	public WebDriver start() {
 		return start("http://automationbykrishna.com/");		
 	}
 }
 
-	public WebDriver start() {
-		return start("http://automationbykrishna.com");
-	}
-}
