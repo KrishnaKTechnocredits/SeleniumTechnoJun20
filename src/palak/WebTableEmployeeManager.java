@@ -12,7 +12,7 @@ public class WebTableEmployeeManager {
 		if (obj == null)
 			return false;
 		if(obj == this)
-			return false;
+			return true;
 		if(getClass() != obj.getClass())
 			return false;
 		

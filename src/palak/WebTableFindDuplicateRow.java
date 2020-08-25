@@ -36,7 +36,7 @@ public class WebTableFindDuplicateRow extends PredefinedActions  {
 			employeeManager.setEmployeeDept(empDept);
 			boolean flag = employeeHashSet.add(employeeManager);
 			if (flag == false)
-				System.out.println("Duplicate row -> Employee Id: "+ employeeId +" & Employee Name : "+ employeeName);
+				System.out.println("Duplicate row -> Employee Id: "+ employeeManager.getEmployeeId() +" & Employee Name : "+ employeeManager.getEmployeeName());
 		}		
 		System.out.println("Total number of unique rows -> "+employeeHashSet.size());
 	}
