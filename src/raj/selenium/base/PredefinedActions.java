@@ -1,36 +1,17 @@
-package aditi.base;
+package raj.selenium.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PredefinedActions {
-	WebDriver driver;
-
 	public WebDriver start(String url) {
 		String osName = System.getProperty("os.name").toLowerCase();
 		String path = osName.contains("windows") ? "./resources/windows/chromedriver.exe"
 				: osName.contains("mac") ? "./resources/mac/chromedriver" : null;
 		System.setProperty("webdriver.chrome.driver", path);
-		driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
 		return driver;
 	}
-
-	public WebDriver start() {
-		driver = start("http://automationbykrishna.com");
-		return driver;
-	}
-
-	
-//	void navigateDemoTable() {
-//		driver.findElement(By.linkText("Demo Tables")).click();
-//		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-//	}
-//	
-//	void tearDown() {
-//		driver.close();
-//	}
-	
-
 }

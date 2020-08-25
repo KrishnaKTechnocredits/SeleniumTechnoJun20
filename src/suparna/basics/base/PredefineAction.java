@@ -7,6 +7,10 @@ public class PredefineAction {
 
 	public static  WebDriver driver;
 	public void setDriver() {
+		setDriver("http://automationbykrishna.com/");
+		
+	}
+	public void setDriver(String URL) {
 		String os = System.getProperty("os.name").toLowerCase();
 		System.out.println("os : " + os);
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"
@@ -14,8 +18,9 @@ public class PredefineAction {
 		System.setProperty("Webdriver.chrome.driver", path);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
+		driver.get(URL);
 	}
+	
 	public void  pageScoll()
 	{
 		
