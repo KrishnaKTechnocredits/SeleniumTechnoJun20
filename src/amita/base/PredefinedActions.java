@@ -18,8 +18,14 @@ public class PredefinedActions {
 		driver.manage().window().maximize();
 		return driver;
 	}
+
+	
 	public WebDriver start() {
-		//return start("file:///D:/JAVA-JUNE20/TechnoGitProject/SeleniumTechnoJun20/resources/forms/Exam-1.html");		
+		return start("http://automationbykrishna.com/");		
+	}
+}
+
+	public WebDriver start() {
 		return start("http://automationbykrishna.com");
 	}
 }
