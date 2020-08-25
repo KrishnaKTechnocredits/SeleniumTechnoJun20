@@ -21,4 +21,16 @@ public class PredefinedActions {
 		driver = start("http://automationbykrishna.com");
 		return driver;
 	}
+
+	
+//	void navigateDemoTable() {
+//		driver.findElement(By.linkText("Demo Tables")).click();
+//		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
+//	}
+//	
+//	void tearDown() {
+//		driver.close();
+//	}
+	
+
 }
