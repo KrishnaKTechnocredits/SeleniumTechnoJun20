@@ -1,9 +1,6 @@
 package vaishnavi_SeleniumBasics;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -12,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import vaishnavi.PropertyFileOperations.PropertyFileOperation;
 
 //Read values from property file
 
@@ -49,14 +48,10 @@ public class ValidationUsingPropertyFile {
 	}
 
 	void readPropertyFile() throws IOException {
-		File file = new File(".//src/vaishnavi/confiig/BasicElementsData.properties");
-		FileInputStream inputstream = new FileInputStream(file);
-		Properties properties = new Properties();
-
-		properties.load(inputstream);
-		String firstName = properties.getProperty("firstName");
-		String lastName = properties.getProperty("lastName");
-		String companyName = properties.getProperty("companyName");
+		PropertyFileOperation propertyFileOperation = new PropertyFileOperation(".//src//vaishnavi//confiig//BasicElementsData.properties");
+		String firstName = propertyFileOperation.propRead("firstName");
+		String lastName = propertyFileOperation.propRead("lastName");
+		String companyName = propertyFileOperation.propRead("companyName");
 
 		filBasicDetails(firstName, lastName, companyName);
 	}
