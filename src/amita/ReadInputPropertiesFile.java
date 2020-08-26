@@ -18,8 +18,8 @@ public class ReadInputPropertiesFile extends PredefinedActions{
 	WebDriver driver;
 	private String firstName,lastName,companyName;
 
-	void setUp(String url) {
-		driver = start(url);
+	void setUp() {
+		driver = start();
 	}
 	
 	//Reading input data from properties file
@@ -37,7 +37,7 @@ public class ReadInputPropertiesFile extends PredefinedActions{
 	//Validate alert message
 	void validateAlertMsg() throws IOException {
 		driver.findElement(By.linkText("Basic Elements")).click();
-		WebDriverWait wait = new WebDriverWait(driver, 3000);
+		WebDriverWait wait = new WebDriverWait(driver,15);
 		inputFromPropertyFile();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='UserFirstName']")));
 		driver.findElement(By.xpath("//input[@id='UserFirstName']")).sendKeys(firstName);
@@ -61,7 +61,7 @@ public class ReadInputPropertiesFile extends PredefinedActions{
 	
 	public static void main(String[] args) {
 		ReadInputPropertiesFile readInputPropertiesFile = new ReadInputPropertiesFile();
-		readInputPropertiesFile.setUp("http://automationbykrishna.com/");
+		readInputPropertiesFile.setUp();
 		try {
 			readInputPropertiesFile.validateAlertMsg();
 		} catch (IOException e) {
