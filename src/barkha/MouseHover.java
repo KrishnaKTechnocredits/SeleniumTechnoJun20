@@ -28,10 +28,7 @@ public class MouseHover extends PredefinedFunctions {
 		String actualText=driver.findElement(By.xpath("//div[@class='a-row a-spacing-base']/h1")).getText();
 		
 		if (actualText.equals("Your Account"))
-				
-				
-				
-			System.out.println("Test Case PASS: Successfully landed to Account Screen.");
+			System.out.println("Test Case PASS: Successfully landed to Account Screen (Mouse Hover Successfully).");
 		else
 			System.out.println("Test Case FAIL.");
 	}
