@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PredefinedActions {
-	
+
 	WebDriver driver;
 	
 	public WebDriver start(String url) {
@@ -21,8 +21,7 @@ public class PredefinedActions {
 	}
 	
 	public WebDriver start() {
-		start("http://automationbykrishna.com/");
+		driver= start("http://automationbykrishna.com/");
 		return driver;
 	}
-	
 }
