@@ -1,10 +1,12 @@
 package shruti;
 import java.util.HashSet;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 //find total unique row-->8 // set needed on unique values//create another class employee and set values
 //Duplicate row emp ID and Empname
+
 
 import shruti.predefinedActionspkg.PtrdefinedActions;
 public class WebTableOps extends PtrdefinedActions {
@@ -16,11 +18,11 @@ public class WebTableOps extends PtrdefinedActions {
 	}
 	
 	void findUniqueRow(){
-		
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 		driver.findElement(By.id("demotable")).click();
 		HashSet<Employee> empSet = new HashSet<>();
 		int rowSize = driver.findElements(By.xpath("//table[@class='table table-striped']/tbody/tr")).size();
-		
+		//System.out.println(rowSize);
 		for(int index=1; index<=rowSize; index++){
 				
 			Employee e1 = new Employee();
@@ -30,7 +32,7 @@ public class WebTableOps extends PtrdefinedActions {
 			e1.setEmpDept(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr["+index+"]/td[5]")).getText());
 			
 			if(!empSet.add(e1)){
-				System.out.println( "Dublicate row is empID: "+ e1.getEmpID()+" and Employee name is "+ e1.getEmpName());
+				System.out.println( "Duplicate row is empID: "+ e1.getEmpID()+" and Employee name is "+ e1.getEmpName());
 			}	
 		}
 		System.out.println("Total number of uniqie row: " +empSet.size() );
