@@ -1,5 +1,8 @@
 package aditi.base;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,15 +25,11 @@ public class PredefinedActions {
 		return driver;
 	}
 
-	
-//	void navigateDemoTable() {
-//		driver.findElement(By.linkText("Demo Tables")).click();
-//		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-//	}
-//	
-//	void tearDown() {
-//		driver.close();
-//	}
-	
+	void navigateDemoTable() {
+		driver.findElement(By.linkText("Demo Tables")).click();
+	}
 
+	void tearDown() {
+		driver.close();
+	}
 }
