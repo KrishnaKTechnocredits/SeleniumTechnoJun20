@@ -23,7 +23,6 @@ public class PredefineAction {
 	
 	public void tearDown() {
 		driver.close();
-		
 	}
 	public void  pageScoll()
 	{
