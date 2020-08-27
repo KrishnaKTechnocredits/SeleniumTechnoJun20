@@ -1,9 +1,11 @@
 package rachana.base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PredefinedActions {
+	WebDriver driver;
 	
 	public WebDriver start(String url) {
 		String os = System.getProperty("os.name").toLowerCase();
@@ -12,7 +14,7 @@ public class PredefinedActions {
 				: os.contains("mac") ? "./resources/mac/chromedriver" : null;
 
 		System.setProperty("webdriver.chrome.driver", path);
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
 		
@@ -22,4 +24,6 @@ public class PredefinedActions {
 	public WebDriver start() {
 		return start("http://automationbykrishna.com");
 	}
+	
+	
 }

@@ -15,4 +15,8 @@ public class PredefinedActions {
 		driver.get(url);
 		return driver;
 	}
+	
+	public  WebDriver start() {
+		return start("http://automationbykrishna.com");
+	}
 }
