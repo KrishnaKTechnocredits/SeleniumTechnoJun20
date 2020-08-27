@@ -20,3 +20,4 @@ public class PredefinedActions {
 	public WebDriver start() {
 		return start("http://automationbykrishna.com");
 }
+}
