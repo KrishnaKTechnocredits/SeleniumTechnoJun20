@@ -21,8 +21,7 @@ public class PredefineAction {
 		driver.get(URL);
 	}
 	
-	public void tearDown()
-	{
+	public void tearDown() {
 		driver.close();
 	}
 	public void  pageScoll()
