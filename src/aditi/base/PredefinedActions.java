@@ -21,8 +21,7 @@ public class PredefinedActions {
 	}
 
 	public WebDriver start() {
-		driver = start("http://automationbykrishna.com");
-		return driver;
+		return start("http://automationbykrishna.com");
 	}
 
 	void navigateDemoTable() {
