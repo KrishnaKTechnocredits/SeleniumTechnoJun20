@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PredefinedActions {
-	
+
 	public WebDriver start(String url) {
 		String os = System.getProperty("os.name").toLowerCase();
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"
@@ -16,5 +16,8 @@ public class PredefinedActions {
 		driver.get(url);
 		return driver;
 	}
-	
+
+	public WebDriver start() {
+		return start("http://automationbykrishna.com");
+	}
 }
