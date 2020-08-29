@@ -82,7 +82,7 @@ public class SeleniumTest2 extends PredefinedFunctions {
 		driver.findElement(By.xpath("//input[@id='j_password']")).sendKeys("*****");
 
 		if (driver.findElement(By.xpath("//input[@id='keepLoginSignUp']")).isSelected()) {
-			driver.findElement(By.xpath("//input[@id='keepLoginSignUp']/..//label")).click();
+			driver.findElement(By.xpath("//input[@id='keepLoginSignUp']")).click();
 		}
 	}
 
