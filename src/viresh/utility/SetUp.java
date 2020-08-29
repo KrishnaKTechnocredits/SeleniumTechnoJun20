@@ -13,6 +13,11 @@ public class SetUp extends PredefinedActions{
 		return driver;
 	}
 	
+	public WebDriver setUp(String url) {
+		driver=start(url);
+		return driver;
+	}
+	
 	public void tearDown() {
 		driver.close();
 	}
