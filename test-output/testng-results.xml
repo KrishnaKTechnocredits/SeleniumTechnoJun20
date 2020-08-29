@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8122" started-at="2020-08-29T05:26:15Z" finished-at="2020-08-29T05:26:23Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8122" started-at="2020-08-29T05:26:15Z" finished-at="2020-08-29T05:26:23Z">
+      <class name="ajit.base.TestNG.LaunchBrowser">
+        <test-method status="PASS" signature="SecondTest()[pri:0, instance:ajit.base.TestNG.LaunchBrowser@23ceabc1]" name="SecondTest" duration-ms="14" started-at="2020-08-29T10:56:15Z" finished-at="2020-08-29T10:56:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondTest -->
+        <test-method status="PASS" signature="Setup()[pri:0, instance:ajit.base.TestNG.LaunchBrowser@23ceabc1]" name="Setup" duration-ms="8085" started-at="2020-08-29T10:56:15Z" finished-at="2020-08-29T10:56:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+      </class> <!-- ajit.base.TestNG.LaunchBrowser -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
