@@ -63,7 +63,7 @@ public class SnapdealLogin extends PredefineAction {
 
 					wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='email']")));
 					driver.findElement(By.xpath("//input[@id='email']")).sendKeys("nikam.aradhya.v@gmail.com");
-					driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("Aradhya@01");
+					driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("************");
 					driver.findElement(By.xpath("//button[@id='loginbutton']")).click();
 				}
 			}
