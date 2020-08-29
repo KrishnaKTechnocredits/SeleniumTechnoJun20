@@ -68,7 +68,7 @@ public class SnapdealLogin extends PredefinedActions {
 	// the keepLoginSignUp checkbox
 	void loginOnFacebook() {
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jaiswal.aastha1691@gmail.com");
-		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("Sushma9491");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("abcde");
 		driver.findElement(By.xpath("//button[@id='loginbutton']")).click();
 		driver.switchTo().window(mainWindow);
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='loginIframe']")));
