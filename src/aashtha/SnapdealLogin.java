@@ -18,18 +18,18 @@ public class SnapdealLogin extends PredefinedActions {
 	WebDriverWait wait;
 	String mainWindow;
 
-	//opens the Chrome
+	// opens the Chrome
 	void setUp(String url) {
 		driver = start(url);
 		wait = new WebDriverWait(driver, 30);
 	}
-	
-	//closes the browser window
+
+	// closes the browser window
 	void tearDown() {
 		driver.close();
 	}
-	
-	//Verifies : Snapdeal page title
+
+	// Verifies : Snapdeal page title
 	void verifyPageTitle() {
 		String expectedTitle = "Online Shopping Site India - Shop Electronics, Mobiles, Men & Women Clothing, Shoes - www. Snapdeal.com";
 		String actualTitle = driver.getTitle();
@@ -38,16 +38,14 @@ public class SnapdealLogin extends PredefinedActions {
 		else
 			System.out.println("Page title is not correct");
 	}
-	
-	//Clicks on FB button and verifies the FB page title
+
+	// Clicks on FB button and verifies the FB page title
 	void verifyFBPageTitle() {
 		mainWindow = driver.getWindowHandle();
 		actions = new Actions(driver);
-		WebElement signIn = driver.findElement(By.xpath("//div[@id='sdHeader']/div[4]/div[2]/div/div[3]/div[3]/div"));
+		WebElement signIn = driver.findElement(By.xpath("//div[@class='accountInner']"));
 		actions.moveToElement(signIn).build().perform();
-		driver.findElement(
-				By.xpath("//div[@id='sdHeader']/div[4]/div[2]/div/div[3]/div[3]/div/div/div[2]/div[2]/span[2]/a"))
-				.click();
+		driver.findElement(By.xpath("//span[@class='accountBtn btn rippleWhite']")).click();
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='loginIframe']")));
 		driver.findElement(By.xpath("//div[@id='fbUserLogin']")).click();
 		Set<String> multiWindow = driver.getWindowHandles();
@@ -65,8 +63,9 @@ public class SnapdealLogin extends PredefinedActions {
 		else
 			System.out.println("Facebook Page title is not correct");
 	}
-	
-	//Logs in into FB and verifies the details filled in by default and unchecks the keepLoginSignUp checkbox
+
+	// Logs in into FB and verifies the details filled in by default and unchecks
+	// the keepLoginSignUp checkbox
 	void loginOnFacebook() {
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jaiswal.aastha1691@gmail.com");
 		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("Sushma9491");
