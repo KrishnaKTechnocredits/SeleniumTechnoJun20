@@ -99,7 +99,7 @@ public class Exam2 {
 				driver.switchTo().window(browser);
 				Thread.sleep(4000);
 				driver.findElement(By.id("email")).sendKeys("inamdar.sonal@gmail.com"); // login to Facebook account
-				driver.findElement(By.id("pass")).sendKeys("rani275");
+				driver.findElement(By.id("pass")).sendKeys("abc");
 				driver.findElement(By.id("loginbutton")).click();
 
 				Thread.sleep(4000);
