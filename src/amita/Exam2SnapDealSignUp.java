@@ -67,7 +67,7 @@ public class Exam2SnapDealSignUp extends PredefinedActions {
 			}
 		}
 		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("aliaalisha224@gmail.com");
-		driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("blue10star");
+		driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("password");
 		driver.findElement(By.xpath("//button[@id='loginbutton']")).click();
 
 		driver.switchTo().window(mainWindow);
