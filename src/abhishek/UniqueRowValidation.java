@@ -26,10 +26,10 @@ public class UniqueRowValidation extends PredefinedActions {
 	}
 
 	void validateUniqueRow() {
-		Set<EmployeeManagerTable> empManagerSet = new HashSet<EmployeeManagerTable>();
+		Set<Assignment_EmployeeMAnagerTable> empManagerSet = new HashSet<Assignment_EmployeeMAnagerTable>();
 		int rows = driver.findElements(By.xpath("//table[@class='table table-striped']/tbody/tr")).size();
 		for (int index = 1; index <= rows; index++) {
-			EmployeeManagerTable emp = new EmployeeManagerTable();
+			Assignment_EmployeeMAnagerTable emp = new Assignment_EmployeeMAnagerTable();
 			emp.setEmpID(Integer.parseInt(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[" + index + "]/td[2]")).getText()));
 			emp.setEmpName(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[" + index + "]/td[3]")).getText());
 			emp.setEmpManagerID(Integer.parseInt(driver.findElement(By.xpath("//table[@class='table table-striped']/tbody/tr[" + index + "]/td[4]")).getText()));
