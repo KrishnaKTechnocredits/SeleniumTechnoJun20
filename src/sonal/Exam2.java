@@ -99,7 +99,7 @@ public class Exam2 {
 				driver.switchTo().window(browser);
 				Thread.sleep(4000);
 				driver.findElement(By.id("email")).sendKeys("inamdar.sonal@gmail.com"); // login to Facebook account
-				driver.findElement(By.id("pass")).sendKeys("abc");
+				driver.findElement(By.id("pass")).sendKeys("Mab@Ma!27");
 				driver.findElement(By.id("loginbutton")).click();
 
 				Thread.sleep(4000);
@@ -107,17 +107,23 @@ public class Exam2 {
 			}
 		}
 		
-		//driver.switchTo().window(mainwin);
+		driver.switchTo().window(mainwin);
 		
-			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='loginIframe']")));
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='loginIframe']")));
 			
 			//System.out.println(driver.getCurrentUrl());
 
 			// Check if the checkbox is selected. If yes, uncheck it
-
-			if (driver.findElement(By.xpath("//input[@id='keepLoginSignUp']")).isSelected()) {
+			
+				driver.findElement(By.xpath("//input[@name='j_number']")).sendKeys("555555555");
+				driver.findElement(By.xpath("//input[@id='j_password']")).sendKeys("abc");
+				
+			
+					
+	if (driver.findElement(By.xpath("//input[@id='keepLoginSignUp']")).isSelected())
+			{
 				System.out.println("Checkbox on sign in page is checked");
-				driver.findElement(By.xpath("//input[@id='keepLoginSignUp']")).click();
+				
 			}
 
 			else
