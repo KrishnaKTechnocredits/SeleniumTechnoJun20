@@ -17,7 +17,7 @@ public class ActionsEx1 extends PredefinedActions {
 
 	void dragAndDrop() {
 
-		scrollToElement();
+		//scrollToElement();
 		// WebElement srcEle = driver.findElement(By.id("draggable"));
 		// WebElement desEle = driver.findElement(By.className("test1"));
 
