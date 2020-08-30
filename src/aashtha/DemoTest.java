@@ -10,7 +10,7 @@ public class DemoTest {
 		System.out.println("os : "+ os);
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"
 				: os.contains("mac") ? "./resources/mac/chromedriver" : null;
-
+		System.out.println(path);
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://automationbykrishna.com/");
