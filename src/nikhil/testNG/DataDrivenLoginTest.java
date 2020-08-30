@@ -3,6 +3,7 @@ package nikhil.testNG;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -26,8 +27,8 @@ public class DataDrivenLoginTest extends PreDefinedActions {
 	@Test(dataProvider="loginDataProvider")
 	void loginTest(String userName, String password, String expectedResult) {
 		driver.findElement(By.linkText("Registration")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Login']")));
-		driver.findElement(By.xpath("//input[@id='unameSignin']")).sendKeys(userName);
+		WebElement uName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='unameSignin']")));
+		uName.sendKeys(userName);
 		driver.findElement(By.xpath("//input[@id='pwdSignin']")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@id='btnsubmitdetails']")).click();
 		
