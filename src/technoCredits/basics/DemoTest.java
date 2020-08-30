@@ -16,5 +16,6 @@ public class DemoTest {
 		driver.get("http://automationbykrishna.com/");
 		System.out.println("AutomationByKrishna website open successfully.");
 		driver.quit();
+
 	}
 }
