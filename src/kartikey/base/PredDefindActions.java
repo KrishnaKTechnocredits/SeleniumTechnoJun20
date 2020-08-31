@@ -14,5 +14,6 @@ public class PredDefindActions {
 		driver.manage().window().maximize();
 		return driver;
 	}
+	
 
 }
