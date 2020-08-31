@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="129098" started-at="2020-08-29T05:45:54Z" finished-at="2020-08-29T05:48:03Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="129098" started-at="2020-08-29T05:45:54Z" finished-at="2020-08-29T05:48:03Z">
+      <class name="selenium.testng.demo.DemoTestNG">
+        <test-method status="PASS" signature="firstTest()[pri:0, instance:selenium.testng.demo.DemoTestNG@7ac7a4e4]" name="firstTest" duration-ms="35602" started-at="2020-08-29T11:15:54Z" finished-at="2020-08-29T11:16:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTest -->
+        <test-method status="PASS" signature="secondTest()[pri:0, instance:selenium.testng.demo.DemoTestNG@7ac7a4e4]" name="secondTest" duration-ms="93472" started-at="2020-08-29T11:16:29Z" finished-at="2020-08-29T11:18:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondTest -->
+      </class> <!-- selenium.testng.demo.DemoTestNG -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
