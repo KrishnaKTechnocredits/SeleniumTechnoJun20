@@ -66,7 +66,7 @@ public class SnapDeal extends PredefinedAction{
 		driver.findElement(By.xpath("(//div[@id='fbUserLogin'])[3]")).isDisplayed();
 		driver.findElement(By.xpath("(//div[@id='googleUserLogin'])[3]")).isDisplayed();
    	
-   		driver.findElement(By.xpath("//input[@id='j_password_login_uc']")).sendKeys("Syntel23#"); // send password
+   		driver.findElement(By.xpath("//input[@id='j_password_login_uc']")).sendKeys("ABC"); // send password
    		//remove selection of keep in logedIn checkobox
    		driver.findElement(By.xpath("//div/label[@for='keepLoginUC']")).click();
    		
