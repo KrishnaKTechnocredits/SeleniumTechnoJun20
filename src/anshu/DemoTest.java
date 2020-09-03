@@ -2,10 +2,11 @@ package anshu;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class DemoTest {
-
-	public static void main(String[] args) {
+@Test
+	public void mian() {
 		String os = System.getProperty("os.name").toLowerCase();
 		System.out.println("os : "+ os);
 		String path = os.contains("windows") ? "./resources/windows/chromedriver.exe"

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import anshu.base.PredefinedProperty;
 
@@ -64,8 +65,8 @@ public class AutomationOnIFrame extends PredefinedProperty {
 			System.out.println("User does not on correct page.");
 		}
 	}
-
-	public static void main(String[] args) {
+@ Test
+	public void main() {
 		AutomationOnIFrame auotomateIFrame = new AutomationOnIFrame();
 		auotomateIFrame.setUp();
 		auotomateIFrame.navigateToIframe();
