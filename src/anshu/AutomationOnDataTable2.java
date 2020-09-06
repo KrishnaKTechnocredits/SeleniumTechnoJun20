@@ -41,8 +41,6 @@ public class AutomationOnDataTable2 extends PredefinedProperty {
 		String exptdText = "paginate_button next";
 		Map<String, Integer> officeMap = new LinkedHashMap<String, Integer>();
 		Set<String> officeSet = new LinkedHashSet();
-		// Iterator<String> itr = officeSet.iterator();
-
 		do {
 			List<WebElement> list = driver
 					.findElements(By.xpath("//table[@id='example']//tbody//tr[@role='row']/td[5]"));
@@ -79,8 +77,6 @@ public class AutomationOnDataTable2 extends PredefinedProperty {
 		String exptdText = "paginate_button next";
 		Map<String, Integer> positionMap = new LinkedHashMap<String, Integer>();
 		Set<String> PositionSet = new LinkedHashSet();
-		
-
 		do {
 			List<WebElement> list = driver
 					.findElements(By.xpath("//table[@id='example']//tbody//tr[@role='row']/td[4]"));
