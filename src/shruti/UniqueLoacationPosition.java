@@ -16,7 +16,7 @@ import shruti.predefinedActionspkg.PtrdefinedActions;
 public class UniqueLoacationPosition extends PtrdefinedActions {
 
 	WebDriver driver;
-	WebDriverWait wait;
+	//WebDriverWait wait;
 	
 	@BeforeMethod
 	void setUp() {
@@ -26,9 +26,10 @@ public class UniqueLoacationPosition extends PtrdefinedActions {
 	@Test
 	void uniqueOffices() {
 		int rowSize = driver.findElements(By.xpath("//table[@id='example']/tbody/tr/td[1]")).size();
+		int tableSize= driver.findElements(By.xpath("//a[@aria-controls='example' and @data-dt-idx>=1 and @data-dt-idx<=6]")).size();
 		Set<String> officeSet = new HashSet<String>();
 		Set<String> positionSet = new HashSet<String>();
-		for(int outerindex=1; outerindex<=6; outerindex++){
+		for(int outerindex=1; outerindex<=tableSize; outerindex++){
 		if(!driver.findElement(By.xpath("//a[text()='Next']")).getAttribute("class").contains("disabled")) {
 			
 			for (int index = 1; index <= rowSize; index++) {
@@ -42,7 +43,6 @@ public class UniqueLoacationPosition extends PtrdefinedActions {
 			}
 			driver.findElement(By.xpath("//a[text()='Next']")).click();
 		}
-		}
-		
+		}	
 	}
 }
