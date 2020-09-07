@@ -65,6 +65,7 @@ public class Loginusingexcel extends PredefinedActions{
 	@AfterClass
 	void tearDown() {
 		driver.close();
+		
 	}
 }
 
