@@ -9,6 +9,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +19,7 @@ import barkha_base.PredefinedFunctions;
 
 public class WebTable_XpathAxes extends PredefinedFunctions {
 	WebDriver driver;
-
+	WebDriverWait wait;
 	@BeforeClass
 	void setUP() {
 		driver = start("https://editor.datatables.net/examples/extensions/excel");
@@ -57,6 +59,10 @@ public class WebTable_XpathAxes extends PredefinedFunctions {
 
 	@Test(priority = 2)
 	void webTable_uniquePosition() {
+		driver.navigate().refresh();
+		wait=new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr/td[4]")));
+		
 		HashSet<String> hashSet_Pos = new HashSet<String>();
 		
 		int size = driver.findElements(By.xpath("//span/a[@tabindex='0']")).size();
