@@ -27,17 +27,17 @@ public class UniqueTable extends PredefinedAction {
 
 	HashSet<String> Unique(int columnNum) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span//a[@class='paginate_button ']")));
-		int count = driver.findElements(By.xpath("//span//a[@class='paginate_button ']")).size();
+		int count = driver.findElements(By.xpath("//span/a[@tabindex='0']")).size();
 		HashSet<String> uniqueElements = new HashSet<String>();
-        int outerIndex=0;
-		while(outerIndex<=count){
+      
+        for (int outerIndex = 1; outerIndex <= count; outerIndex++) {
 			int rowsCount = driver.findElements(By.xpath("//table[@id='example']//tbody//tr")).size();
 			for (int index = 1; index <= rowsCount; index++) {
-				String location = driver.findElement(By.xpath("//table[@id='example']//tbody//tr[" + index + "]//td["+columnNum+"]")).getText();
+				String location = driver.findElement(By.xpath("//tbody/tr[" + index + "]//td["+columnNum+"]")).getText();
 				uniqueElements.add(location);
 			}
-			driver.findElement(By.xpath("//a[text()='Next']")).click();
-			count--;
+		
+			driver.findElement(By.xpath("//span/a[@tabindex='0']["+outerIndex+"]")).click();
 		}
 		return uniqueElements;
 	}
