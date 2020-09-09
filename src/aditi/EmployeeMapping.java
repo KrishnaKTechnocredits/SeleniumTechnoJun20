@@ -12,7 +12,6 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import aditi.base.PredefinedActions;
@@ -63,11 +62,9 @@ public class EmployeeMapping extends PredefinedActions {
 	@Test()
 	void employeeToOfficeCount() {
 		HashMap<String, Integer> employeeToOfficeMap = employeeMapping(5);
-		
 		System.out.println("\nEmployee Count per location(office): ");
 		System.out.println("---------------------------------------");
 		displayData(employeeToOfficeMap);
-
 	}
 
 	@Test()
