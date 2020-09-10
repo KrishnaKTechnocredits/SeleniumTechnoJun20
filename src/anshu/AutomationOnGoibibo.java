@@ -113,7 +113,7 @@ public class AutomationOnGoibibo extends PredefinedProperty {
 		return dayMap.get(day);
 	}
 
-	// froM AutoSuggestion
+	// AutoSuggestion On Source ------------------------
 
 	@Test(priority = 1)
 	public void validateSource() {
@@ -148,6 +148,11 @@ public class AutomationOnGoibibo extends PredefinedProperty {
 		System.out.println("source place is shown to user : Test Pass");
 
 	}
+	
+	
+	
+	
+	// autoSuggestion on destination --------------------
 
 	@Test(priority = 2)
 	public void validateDestination() {
@@ -182,7 +187,11 @@ public class AutomationOnGoibibo extends PredefinedProperty {
 		System.out.println("Destination place is shown to user : Test Pass");
 
 	}
-
+	
+	
+	
+	// Departure Calender-----------------
+ 
 	@Test(priority = 3)
 	public void validateOnDeparture() {
 
@@ -268,6 +277,9 @@ public class AutomationOnGoibibo extends PredefinedProperty {
 		Assert.assertEquals(actualdepDate, exptddepDate);
 	}
 
+	
+	
+	/// return calender----------------------------------
 	@Test(priority = 4)
 	public void validateReturnCalender() {
 		String proceed = "";
